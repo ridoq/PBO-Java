@@ -1,0 +1,28 @@
+public class TestKoperasi {
+    public static void main(String[] args) {
+        Anggota anggota1 = new Anggota("111333444", "Donny", 5000000);
+
+        System.out.println("Nama Anggota: " + anggota1.getNama());
+        System.out.println("Limit Pinjaman: " + anggota1.getLimitPinjaman());
+
+        // Uji 1: Meminjam melebihi limit
+        System.out.println("\nMeminjam uang 10.000.000...");
+        anggota1.pinjam(10000000);
+        System.out.println("Jumlah pinjaman saat ini: " + anggota1.getJumlahPinjaman());
+
+        // Uji 2: Meminjam dalam batas limit
+        System.out.println("\nMeminjam uang 4.000.000...");
+        anggota1.pinjam(4000000);
+        System.out.println("Jumlah pinjaman saat ini: " + anggota1.getJumlahPinjaman());
+
+        // Uji 3: Membayar angsuran 1.000.000
+        System.out.println("\nMembayar angsuran 1.000.000");
+        anggota1.angsur(1000000);
+        System.out.println("Jumlah pinjaman saat ini: " + anggota1.getJumlahPinjaman());
+
+        // Uji 4: Membayar angsuran 3.000.000 (lunas)
+        System.out.println("\nMembayar angsuran 3.000.000");
+        anggota1.angsur(3000000);
+        System.out.println("Jumlah pinjaman saat ini: " + anggota1.getJumlahPinjaman());
+    }
+}
